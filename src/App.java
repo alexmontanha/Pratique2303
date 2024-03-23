@@ -5,17 +5,6 @@ public class App {
         int opcao = 0;
         Scanner teclado = new Scanner(System.in);
 
-        // Inicializa variáveis de Saída de Peça
-        int idSaida = 0;
-        int idPecaSaida = 0;
-        int quantidadeSaida = 0;
-
-        // Inicializa variáveis de Entrada de Peça
-        int idEntrada = 0;
-        int idPecaEntrada = 0;
-        int quantidadeEntrada = 0;
-
-        
         while (opcao != 9) {
             clearScreen();
             System.out.println("Bem-vindo ao Sistema de Auto Peças!");
@@ -32,9 +21,35 @@ public class App {
             System.out.println("");
             System.out.print("Opção: ");
             opcao = teclado.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    cadastrarPeca(teclado);
+                    break;
+            }
         }
         teclado.close();
+    }
 
+    private static void cadastrarPeca(Scanner teclado) {
+        clearScreen();
+        System.out.println("Cadastre uma nova peça:");
+        System.out.println("");
+        System.out.print("Nome: ");
+        String nome = teclado.next();
+        System.out.print("Descrição: ");
+        String descricao = teclado.next();
+        System.out.print("Preço: ");
+        double preco = teclado.nextDouble();
+
+        Peca peca = new Peca(0, nome, descricao, preco);
+
+        System.out.println("");
+        System.out.println("Peça cadastrada com sucesso!");
+        System.out.println("");
+        System.out.println(peca.toString());
+        System.out.println("Pressione ENTER para continuar...");
+        teclado.next();
     }
 
     public static void clearScreen() {
