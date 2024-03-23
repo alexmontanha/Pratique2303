@@ -4,6 +4,17 @@ public class App {
     public static void main(String[] args) throws Exception {
         int opcao = 0;
         Scanner teclado = new Scanner(System.in);
+
+        // Inicializa variáveis de Saída de Peça
+        int idSaida = 0;
+        int idPecaSaida = 0;
+        int quantidadeSaida = 0;
+
+        // Inicializa variáveis de Entrada de Peça
+        int idEntrada = 0;
+        int idPecaEntrada = 0;
+        int quantidadeEntrada = 0;
+
         
         while (opcao != 9) {
             clearScreen();
